@@ -13,9 +13,16 @@
   <script>
     window.$docsify = {
       name: '我爱我家',
-      repo: 'https://github.com/yinchengjian/cs-notes'
+      repo: 'https://github.com/yinchengjian/cs-notes',
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 Type to search ',
+        noData: '😞 No Results! ',
+        depth: 6
+      },
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
