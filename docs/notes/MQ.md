@@ -123,3 +123,41 @@ channel.basicPublish(exchangename,routingkey,mandatory, ,messagebodybyte)
 
 ![1552042875732](C:\Users\yinchengjian\AppData\Roaming\Typora\typora-user-images\1552042875732.png)
 
+## KafKa
+
+有这么几个概念：producer，consumer，broker，topic，partition，segment
+
+topic：他是一个逻辑上的概念，我们可以理解为一个话题（盘符），一个话题可以有很多的切入点，
+
+partition：它就是topic下面的一个一个的子话题，每个都是相同的topic的类型（文件夹），消息传递应该是要到这一层
+
+segment：就是partition里面的问题（文件），对应着真实存储的数据。
+
+producer：生产数据的
+
+consumer：消费数据的
+
+broker：这个应该这么理解，他是一个节点（一台主机），多台主机就可以构成一个分布式系统
+
+关于broker、topics、partitions的一些元信息用zk来存，监控和路由啥的也都会用到zk。
+
+所以kafka的流程图大致为：
+
+![img](../images/kafka流程图.png)
+
+
+
+生产者：
+
+会有一个额外的生产队列用来把生产者的消息保存broker上
+
+有一个叫幂等生产者的参数，这个参数配置为true之后，会当生产者王同一个patition中push数据的时候，会有一个基于当前生产者的一个pid，和partition组成的一条单调递增的seq，然后再broker上也会有这个seq<pid,topic,partition>，当req_seq = broker_seq+1，broker才会接收当前的数据
+
+
+
+
+
+
+
+
+
