@@ -24,7 +24,7 @@
 
 ## HTTP方法
 
-get，post，put，delete
+get，post，put（幂等），delete
 
 #### get VS post
 
@@ -80,3 +80,57 @@ HTTP安全性问题：
 
 加密+授权认证
 
+## restful：面向资源
+
+- 看到url就知道资源
+- 看到http动词就知道操作
+- 看到HTTPStatus就知道结果
+
+
+
+## 给老婆解释什么是restful
+
+level0-面向前台
+
+```json
+{
+    addOrder:{
+    	"orderName":"latte"
+	}
+}
+```
+
+level1-面向资源
+
+```json
+/orders
+{
+    addOrder:{
+        "orderName":"latte"
+    }
+}
+```
+
+level2-打上标签
+
+```json
+POST /orders
+{
+    "orderName":"latte"
+}
+```
+
+level3-完美服务
+
+```json
+POST /orders
+{
+    "orderName":"latte"
+    "rel":"delete"
+    "url":"order/12345"
+}
+```
+
+SOAP: simple object access protocol
+
+简单对象访问协议：面向行为和处理的	
