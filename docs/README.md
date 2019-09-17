@@ -28,8 +28,8 @@
 - [数据库系统原理](notes/数据库系统原理.md) </br>
 - [SQL](notes/SQL.md) </br>
 - [Leetcode-Database 题解](notes/Leetcode-Database%20题解.md) </br>
-- [MySQL](notes/mysql.md) </br>
-- [Redis](notes/redis.md)
+- [mysql](notes/mysql.md) </br>
+- [redis](notes/redis.md)
 
 ## ☕️ Java
 
